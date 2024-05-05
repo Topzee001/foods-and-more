@@ -16,9 +16,14 @@ class GroceryScreen extends StatelessWidget {
       } else {
         //TODO: add a scaffold widget
         return Scaffold(
-          floatingActionButton: FloatingActionButton(onPressed: (){
-            //TODO: Present GroceryItemScreen
-          }, child: const Icon(Icons.add),),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              //TODO: Present GroceryItemScreen
+              // const EmptyGroceryScreen(); //not meant to be here
+            },
+            child: const Icon(Icons.add),
+          ),
+          //body: buildGroceryScreen(),
         );
       }
     });
