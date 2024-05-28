@@ -16,7 +16,7 @@ class GroceryItemScreen extends StatefulWidget {
     //required this.isUpdating,
     required this.onCreate,
     required this.onUpdate,
-     this.originalItem,
+    this.originalItem,
   })  : isUpdating = (originalItem != null),
         super(key: key);
 
@@ -25,8 +25,11 @@ class GroceryItemScreen extends StatefulWidget {
 }
 
 class _GroceryItemScreenState extends State<GroceryItemScreen> {
+//TODO: Add Grocery item screen state properties
+
   @override
   Widget build(BuildContext context) {
+    //TODO: Add GroceryItemScreen scaffold
     return Container(
       color: Colors.amber,
     );
