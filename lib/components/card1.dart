@@ -19,19 +19,19 @@ class Card1 extends StatelessWidget {
           children: [
             Text(
               recipe.subtitle,
-              style: FooderlichTheme.darkTextTheme.bodyLarge,
+              style: FooderlichTheme.darkTextTheme.bodyMedium,
             ),
             Positioned(
               child: Text(
                 recipe.title,
-                style: FooderlichTheme.darkTextTheme.bodyMedium,
+                style: FooderlichTheme.darkTextTheme.bodyLarge,
               ),
               top: 20,
             ),
             Positioned(
               child: Text(
                 recipe.message,
-                style: FooderlichTheme.darkTextTheme.bodyLarge,
+                style: FooderlichTheme.darkTextTheme.bodyMedium,
               ),
               bottom: 30,
               right: 0,
@@ -39,7 +39,7 @@ class Card1 extends StatelessWidget {
             Positioned(
               child: Text(
                 recipe.authorName,
-                style: FooderlichTheme.darkTextTheme.bodyLarge,
+                style: FooderlichTheme.darkTextTheme.bodyMedium,
               ),
               bottom: 10,
               right: 0,

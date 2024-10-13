@@ -17,7 +17,7 @@ class Card3 extends StatelessWidget {
       final chip = Chip(
         label: Text(
           element,
-          style: FooderlichTheme.darkTextTheme.bodyLarge,
+          style: FooderlichTheme.darkTextTheme.bodyMedium,
         ),
         backgroundColor: Colors.black.withOpacity(0.7),
       );
