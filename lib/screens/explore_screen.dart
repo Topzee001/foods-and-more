@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fooderlich_scroll/api/mock_fooderlich_service.dart';
-import 'package:fooderlich_scroll/components/today_recipe_list_view.dart';
 import 'package:fooderlich_scroll/models/explore_data.dart';
 import '../components/components.dart';
 import '../models/models.dart';
