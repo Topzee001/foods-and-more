@@ -13,6 +13,7 @@ class GroceryTile extends StatelessWidget {
   final GroceryItem item;
   final Function(bool?)? onComplete;
   final TextDecoration textDecoration;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,39 +21,43 @@ class GroceryTile extends StatelessWidget {
       height: 100.0,
       // TODO: replace the color
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           //TODO: ADD ROW TO GROUP(NAME, DATE, IMPORTANCE)
-          Container(
-            width: 5.0,
-            color: item.color,
-          ),
-          const SizedBox(
-            width: 16,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              Text(
-                item.name,
-                style: GoogleFonts.lato(
-                    color: Colors.black,
-                    decoration: textDecoration,
-                    fontSize: 21,
-                    fontWeight: FontWeight.bold),
+              Container(
+                width: 5.0,
+                color: item.color,
               ),
               const SizedBox(
-                height: 4,
+                width: 16,
               ),
-              buildDate(),
-              const SizedBox(
-                height: 4,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item.name,
+                    style: GoogleFonts.lato(
+                        color: Colors.black,
+                        decoration: textDecoration,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  buildDate(),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  buildImportance()
+                ],
               ),
-              buildImportance()
             ],
           ),
-          Spacer(),
+
           //TODO: ADD ROW TO GROUP(QUANTITY , checkbox);
           Row(
             children: [
@@ -72,7 +77,6 @@ class GroceryTile extends StatelessWidget {
   }
 
   // TODO:  Add buildImportance()
-
   Widget buildImportance() {
     if (item.importance == Importance.low) {
       return Text(

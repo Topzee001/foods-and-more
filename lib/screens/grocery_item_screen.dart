@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:intl/intl.dart';
+import 'package:uuid/uuid.dart';
 import '../components/grocery_tile.dart';
 import '../models/models.dart';
 
@@ -77,6 +78,25 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           IconButton(
             onPressed: () {
               //add callback handler
+              final groceryItem = GroceryItem(
+                color: _currentColor,
+                date: DateTime(
+                  _dueDate.year,
+                  _dueDate.month,
+                  _dueDate.day,
+                  _timeOfDay.hour,
+                  _timeOfDay.minute,
+                ),
+                id: widget.originalItem?.id ?? const Uuid().v1(),
+                importance: _importance,
+                name: _nameController.text,
+                quantity: _currentSliderValue,
+              );
+              if (widget.isUpdating) {
+                widget.onUpdate(groceryItem);
+              } else {
+                widget.onCreate(groceryItem);
+              }
             },
             icon: Icon(Icons.check),
           ),

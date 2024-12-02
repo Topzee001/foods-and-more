@@ -31,7 +31,7 @@ class Card1 extends StatelessWidget {
             Positioned(
               child: Text(
                 recipe.message,
-                style: FooderlichTheme.darkTextTheme.bodyMedium,
+                style: FooderlichTheme.darkTextTheme.displaySmall,
               ),
               bottom: 30,
               right: 0,
